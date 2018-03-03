@@ -22,7 +22,7 @@ def upload_files():
     upload_data = response_data.read()
 
     # upload image file to s3 bucket
-    # path = default path is bucket name - ex) '/my_bucket/'
+    # default path is bucket name - ex) '/my_bucket/'
     # if specify a detailed path, add path before {}
     # for example, '/my_bucket/photos/save_file' -> Key='photos/{}'.format('filename.extension')
     s3.Bucket(bucket).put_object(Key='{}'.format('filename'), Body=upload_data)
